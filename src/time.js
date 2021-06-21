@@ -52,12 +52,15 @@ function percentage(){
     return time;
 }
 
+function accurate(){
+
+}
+
 // var d = new Date().toLocaleTimeString();
 // var t = d.substring(0,5).replace(':', '');
 
 // document.getElementById("percent").innerText = zeroHundred();
 document.getElementById("percent").innerText = percentage();
-
 
 // document.getElementById("currentTime").innerHTML = getLocalTime();
 
