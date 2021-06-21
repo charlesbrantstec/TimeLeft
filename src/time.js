@@ -52,14 +52,14 @@ function percentage(){
     return time;
 }
 
-function accurate(){
+function accurateTime(){
     var time = new Date().toLocaleTimeString();
     var t = time.substring(0,5).replace(':', '');
     var hour = t.substring(0,2);
     var hourRelative = hour - 8;
     var minute = t.substring(3,5);
     var minuteRelative = minute / 60;
-
+    return time;
 }
 
 // var d = new Date().toLocaleTimeString();
