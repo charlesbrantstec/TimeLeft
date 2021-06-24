@@ -1,13 +1,5 @@
 "use strict";
 
-// function getLocalTime(){
-//     return new Date().toLocaleTimeString();
-// }
-//
-// function updatePercentage(){
-//     return new Date().toLocaleTimeString();
-// }
-
 function getHours(){
     return new Date().getHours();
 }
@@ -55,8 +47,14 @@ function percentage(){
 function accurateTimePercentageDay(){
     var hours = new Date().getHours();
     var minutes = new Date().toLocaleTimeString().substring(3,5);
-    var hoursMinutes = (hours / 24) + (minutes / 60);
-    return minutes;
+    var currentTime = parseInt(hours) + parseInt(minutes);
+    var hoursMinutes = (parseInt(hours) / 24) + ((parseInt(minutes) / 60)/24);
+    var dayPercentage = hoursMinutes.toFixed(2);
+    if(parseInt(currentTime) <= 2359){
+        return dayPercentage.substring(2,4) + '%';
+    } else if (parseInt(currentTime) == 0){
+        return '100%';
+    }
 }
 
 var hours = new Date().getHours();
@@ -64,14 +62,8 @@ var minutes = new Date().toLocaleTimeString().substring(3,5);
 var hoursMinutes = (parseInt(hours) / 24) + ((parseInt(minutes) / 60)/24);
 var dayPercentage = hoursMinutes.toFixed(2);
 
-// var t = d.substring(0,5).replace(':', '');
-
-// document.getElementById("percent").innerText = zeroHundred();
-// document.getElementById("percent").innerText = percentage();
-
-document.getElementById("percent").innerText = dayPercentage.substring(2,4) + '%';
+// document.getElementById("percent").innerText = dayPercentage.substring(2,4) + '%';
+document.getElementById("percent").innerText = accurateTimePercentageDay();
 
 
-
-// document.getElementById("currentTime").innerHTML = getLocalTime();
 
