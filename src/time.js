@@ -52,19 +52,26 @@ function percentage(){
     return time;
 }
 
-function accurateTime(){
+function accurateTimePercentageDay(){
     var hours = new Date().getHours();
     var minutes = new Date().toLocaleTimeString().substring(3,5);
-    // return hours;
+    var hoursMinutes = (hours / 24) + (minutes / 60);
     return minutes;
 }
 
+var hours = new Date().getHours();
 var minutes = new Date().toLocaleTimeString().substring(3,5);
+var hoursMinutes = (parseInt(hours) / 24) + ((parseInt(minutes) / 60)/24);
+var dayPercentage = hoursMinutes.toFixed(2);
 
 // var t = d.substring(0,5).replace(':', '');
 
 // document.getElementById("percent").innerText = zeroHundred();
-document.getElementById("percent").innerText = percentage();
+// document.getElementById("percent").innerText = percentage();
+
+document.getElementById("percent").innerText = dayPercentage.substring(2,4) + '%';
+
+
 
 // document.getElementById("currentTime").innerHTML = getLocalTime();
 
