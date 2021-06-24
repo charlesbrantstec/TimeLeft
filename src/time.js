@@ -54,11 +54,13 @@ function percentage(){
 
 function accurateTime(){
     var hours = new Date().getHours();
-    var minutes = Date().toLocaleTimeString().substring(3,5);
+    var minutes = new Date().toLocaleTimeString().substring(3,5);
     // return hours;
+    return minutes;
 }
 
-// var d = new Date().toLocaleTimeString();
+var minutes = new Date().toLocaleTimeString().substring(3,5);
+
 // var t = d.substring(0,5).replace(':', '');
 
 // document.getElementById("percent").innerText = zeroHundred();
