@@ -51,7 +51,11 @@ function accurateTimePercentageDay(){
     var hoursMinutes = (parseInt(hours) / 24) + ((parseInt(minutes) / 60)/24);
     var dayPercentage = hoursMinutes.toFixed(2);
     if(parseInt(currentTime) <= 2359){
-        return dayPercentage.substring(2,4) + '%';
+        if(dayPercentage.substring(2,4).length > 10){
+            return dayPercentage.substring(3,4) + '%';
+        } else {
+            return dayPercentage.substring(2,4) + '%';
+        }
     } else if (parseInt(currentTime) === 0){
         return '100%';
     } else if (parseInt(dayPercentage) >= 0.999){
@@ -59,9 +63,11 @@ function accurateTimePercentageDay(){
     }
 }
 
+
 var hours = new Date().getHours();
 var localTime = new Date().toLocaleTimeString();
 var minutes = new Date().toLocaleTimeString().substring(3,5);
+var currentTime = parseInt(hours) + parseInt(minutes);
 var hoursMinutes = (parseInt(hours) / 24) + ((parseInt(minutes) / 60)/24);
 var dayPercentage = hoursMinutes.toFixed(2);
 
