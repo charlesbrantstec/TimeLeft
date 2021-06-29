@@ -51,7 +51,7 @@ function accurateTimePercentageDay(){
     var hoursMinutes = (parseInt(hours) / 24) + ((parseInt(minutes) / 60)/24);
     var dayPercentage = hoursMinutes.toFixed(2);
     if(parseInt(currentTime) <= 2359){
-        if(dayPercentage.substring(2,4).length > 10){
+        if(dayPercentage.substring(2,3) == 0){
             return dayPercentage.substring(3,4) + '%';
         } else {
             return dayPercentage.substring(2,4) + '%';
