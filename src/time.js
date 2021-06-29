@@ -60,12 +60,14 @@ function accurateTimePercentageDay(){
 }
 
 var hours = new Date().getHours();
+var localTime = new Date().toLocaleTimeString();
 var minutes = new Date().toLocaleTimeString().substring(3,5);
 var hoursMinutes = (parseInt(hours) / 24) + ((parseInt(minutes) / 60)/24);
 var dayPercentage = hoursMinutes.toFixed(2);
 
 // document.getElementById("percent").innerText = dayPercentage.substring(2,4) + '%';
 document.getElementById("percent").innerText = accurateTimePercentageDay();
+document.getElementById("localTime").innerText = localTime;
 
 
 
