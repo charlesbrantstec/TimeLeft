@@ -52,18 +52,25 @@ function accurateTimePercentageDay(){
     var currentTime = parseInt(hours) + parseInt(minutes);
     var hoursMinutes = (parseInt(hours) / 24) + ((parseInt(minutes) / 60)/24);
     var dayPercentage = hoursMinutes.toFixed(2);
-    if(parseInt(currentTime) <= 2359){
+    var midnightPercentage = hoursMinutes.toString().substring(2,4);
+    if(currentTime <= 2352){
         if(dayPercentage.substring(2,3) == 0){
             return dayPercentage.substring(3,4) + '%';
         } else {
             return dayPercentage.substring(2,4) + '%';
         }
-    } else if (parseInt(currentTime) === 0){
+    } else if (currentTime >= 2353) {
+        return midnightPercentage;
+    } else if (currentTime === 0){
         return '100%';
     } else if (parseInt(dayPercentage) >= 0.999){
         return '99%';
     }
 }
+
+var test = ((23/24) + ((53/60)/24)).toFixed(2);
+var test2 = ((23/24) + ((53/60)/24)).toString().substring(2,4);
+
 
 
 var hours = new Date().getHours();
