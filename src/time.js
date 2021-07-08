@@ -46,9 +46,9 @@ function percentage(){
 
 function accurateTimePercentageDay(){
     // var hours = new Date().getHours();
-    var hours = 23;
+    var hours = 0;
     // var minutes = new Date().toLocaleTimeString().substring(3,5);
-    var minutes = 52;
+    var minutes = 1;
     var currentTime = parseInt(hours) + parseInt(minutes);
     var hoursMinutes = (parseInt(hours) / 24) + ((parseInt(minutes) / 60)/24);
     var dayPercentage = hoursMinutes.toFixed(2);
