@@ -45,26 +45,25 @@ function percentage(){
 }
 
 function accurateTimePercentageDay(){
-    // var hours = new Date().getHours();
-    var hours = 23;
-    // var minutes = new Date().toLocaleTimeString().substring(3,5);
-    var minutes = 52;
-    var currentTime = parseInt(hours) + parseInt(minutes);
-    var hoursMinutes = (parseInt(hours) / 24) + ((parseInt(minutes) / 60)/24);
-    var dayPercentage = hoursMinutes.toFixed(2);
-    var midnightPercentage = hoursMinutes.toString().substring(2,4);
-    if(currentTime < 2352 ){
+    hours = new Date().getHours();
+    // hours = 23;
+    minutes = new Date().toLocaleTimeString().substring(3,5);
+    // minutes = 54;
+    currentTime = hours.toString() + minutes.toString();
+    // var currentTime = parseInt(hours) + parseInt(minutes);
+    hoursMinutes = (parseInt(hours) / 24) + ((parseInt(minutes) / 60)/24);
+    dayPercentage = hoursMinutes.toFixed(2);
+    let midnightPercentage = hoursMinutes.toString().substring(2,4);
+    if(parseInt(currentTime) <= 2352 ){
         if(dayPercentage.substring(2,3) == 0){
             return dayPercentage.substring(3,4) + '%';
         } else {
             return dayPercentage.substring(2,4) + '%';
         }
-    } else if (currentTime >= 2353) {
-        return midnightPercentage;
-    } else if (currentTime === 0){
+    } else if (parseInt(currentTime) >= 2353) {
+        return midnightPercentage + '%';
+    } else if (parseInt(currentTime) === 0){
         return '100%';
-    } else if (parseInt(dayPercentage) >= 0.999){
-        return '99%';
     }
 }
 
