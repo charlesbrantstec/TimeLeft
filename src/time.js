@@ -46,26 +46,29 @@ function percentage(){
 
 function accurateTimePercentageDay(){
     // var hours = new Date().getHours();
-    var hours = 0;
-    // var minutes = new Date().toLocaleTimeString().substring(3,5);
-    var minutes = 1;
+    var hours = 23;
+    var minutes = new Date().toLocaleTimeString().substring(3,5);
+    var minutes = 53;
     var currentTime = parseInt(hours) + parseInt(minutes);
     var hoursMinutes = (parseInt(hours) / 24) + ((parseInt(minutes) / 60)/24);
     var dayPercentage = hoursMinutes.toFixed(2);
     var midnightPercentage = hoursMinutes.toString().substring(2,4);
-    if(currentTime <= 2352){
+    if(currentTime < 2352 ){
         if(dayPercentage.substring(2,3) == 0){
             return dayPercentage.substring(3,4) + '%';
         } else {
             return dayPercentage.substring(2,4) + '%';
         }
-    } else if (currentTime >= 2353) {
-        return midnightPercentage;
-    } else if (currentTime === 0){
-        return '100%';
-    } else if (parseInt(dayPercentage) >= 0.999){
+    } else {
         return '99%';
     }
+    // else if (currentTime >= 2353) {
+    //     return midnightPercentage;
+    // } else if (currentTime === 0){
+    //     return '100%';
+    // } else if (parseInt(dayPercentage) >= 0.999){
+    //     return '99%';
+    // }
 }
 
 var test = ((23/24) + ((53/60)/24)).toFixed(2);
