@@ -45,11 +45,11 @@ function percentage(){
 }
 
 function accurateTimePercentageDay(){
-    hours = new Date().getHours();
-    minutes = new Date().toLocaleTimeString().substring(3,5);
-    currentTime = hours.toString() + minutes.toString();
-    hoursMinutes = (parseInt(hours) / 24) + ((parseInt(minutes) / 60)/24);
-    dayPercentage = hoursMinutes.toFixed(2);
+    var hours = new Date().getHours();
+    var minutes = new Date().toLocaleTimeString().substring(3,5);
+    var currentTime = hours.toString() + minutes.toString();
+    var hoursMinutes = (parseInt(hours) / 24) + ((parseInt(minutes) / 60)/24);
+    var dayPercentage = hoursMinutes.toFixed(2);
     let midnightPercentage = hoursMinutes.toString().substring(2,4);
     if(parseInt(currentTime) <= 2352 ){
         if(parseInt(dayPercentage.substring(2,3)) === 0){
@@ -64,15 +64,15 @@ function accurateTimePercentageDay(){
     }
 }
 
-let test = ((23/24) + ((53/60)/24)).toFixed(2);
-let test2 = ((23/24) + ((53/60)/24)).toString().substring(2,4);
+// let test = ((23/24) + ((53/60)/24)).toFixed(2);
+// let test2 = ((23/24) + ((53/60)/24)).toString().substring(2,4);
 
-let hours = new Date().getHours();
-let localTime = new Date().toLocaleTimeString();
-let minutes = new Date().toLocaleTimeString().substring(3,5);
-let currentTime = parseInt(hours) + parseInt(minutes);
-let hoursMinutes = (parseInt(hours) / 24) + ((parseInt(minutes) / 60)/24);
-let dayPercentage = hoursMinutes.toFixed(2);
+// let hours = new Date().getHours();
+var localTime = new Date().toLocaleTimeString();
+// let minutes = new Date().toLocaleTimeString().substring(3,5);
+// let currentTime = parseInt(hours) + parseInt(minutes);
+// let hoursMinutes = (parseInt(hours) / 24) + ((parseInt(minutes) / 60)/24);
+// let dayPercentage = hoursMinutes.toFixed(2);
 
 document.getElementById("percent").innerText = accurateTimePercentageDay();
 document.getElementById("localTime").innerText = localTime;
