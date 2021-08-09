@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <title>timeLeft</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body style="background:black;">
 <h1 id="localTime" class="text-secondary " style="position:absolute;"></h1>
@@ -19,7 +20,17 @@
     <!--</div>-->
 
     <div class="d-flex justify-content-md-center align-items-center vh-100">
-        <h1 id="percent" class="text-white align-center" style="font-size: 200px;"></h1>
+        <div class="loader">
+            <div class="face">
+                <div class="circle"></div>
+            </div>
+            <h1 id="percent" class="text-white align-center" style="
+            font-size: 90px;
+            position:absolute;"></h1>
+<!--            <div class="face">-->
+<!--                <div class="circle"></div>-->
+<!--            </div>-->
+        </div>
     </div>
 
 
